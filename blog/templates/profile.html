@@ -1,0 +1,40 @@
+{% extends 'feed.html' %}
+{% block content %}
+
+<!-- Profile -->
+<div class="profile ">
+	<h2>@{{ user.username }}</h2>
+</div>
+
+<!-- items  del Proyecto-->
+<table class="table">
+	<thead>
+		<tr class="follow">
+		  <th ><h5>ID</h5></th>
+		  <th ><h5>URL</h5></th>
+		  <th ><h5>TÍTULO</h5></th>
+		  <th ><h5>DESCRIPCIÓN</h5></th>
+	
+		</tr>
+	
+	  </thead>
+	
+	<tbody>
+		
+		{% for p in project %}
+		<tr>
+			<td><h5>{{p.id}}</h5> </td>
+			<td><h5>{{p.url_imagen}}</h5> </td>
+			<td><h5>{{ p.titulo}}</h5> </td>
+			<td><h5>{{ p.descripcion }}</h5> </td>
+		
+		</tr>
+		{% endfor %}
+		
+	</tbody>
+</table>
+
+
+
+{{ block.super }}
+{% endblock %}

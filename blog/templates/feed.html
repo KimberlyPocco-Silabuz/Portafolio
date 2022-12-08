@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% load humanize %}
+{% block content %}
+
+{% for p in projects  %}
+
+<article>
+    <div class="container-article">
+        <div>
+            <p class="username">Proyecto creado por <b class="text-info">@{{ p.user.username }}</b></p>
+            <p class="titulo">Título del proyecto: {{p.titulo}}</p>
+            <p class="descripcion">Descripción del proyecto: {{p.descripcion}}</p>
+            <i class="clock"></i>
+            <time data-time="#">{{ p.timestamp|naturaltime }}</time>
+           
+        </div>
+    </div>
+</article>
+
+{% endfor %}
+
+{% endblock %}
