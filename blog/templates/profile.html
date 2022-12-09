@@ -1,40 +1,35 @@
-{% extends 'feed.html' %}
-{% block content %}
+{% extends 'feed.html' %} {% load static %} {% block contentProfile %}
 
 <!-- Profile -->
-<div class="profile ">
-	<h2>@{{ user.username }}</h2>
+<div class="profile">
+	
+  <h2>Tus proyectos,  @{{ user.username }}</h2>
 </div>
 
 <!-- items  del Proyecto-->
-<table class="table">
-	<thead>
-		<tr class="follow">
-		  <th ><h5>ID</h5></th>
-		  <th ><h5>URL</h5></th>
-		  <th ><h5>TÍTULO</h5></th>
-		  <th ><h5>DESCRIPCIÓN</h5></th>
-	
-		</tr>
-	
-	  </thead>
-	
-	<tbody>
-		
-		{% for p in project %}
-		<tr>
-			<td><h5>{{p.id}}</h5> </td>
-			<td><h5>{{p.url_imagen}}</h5> </td>
-			<td><h5>{{ p.titulo}}</h5> </td>
-			<td><h5>{{ p.descripcion }}</h5> </td>
-		
-		</tr>
-		{% endfor %}
-		
-	</tbody>
-</table>
+<link href="{% static 'css/style.css'%}" rel="stylesheet" />
+<div class="container">
+	<table class="table">
+		<thead>
+		  <tr>
+			<th scope="col"><h2>ID</h2></th></div>
+			<th scope="col"><h2>URL</h2></th>
+			<th scope="col"><h2>TÍTULO</h2></th>
+			<th scope="col"><h2>DESCRIPCIÓN</h2></th>
+		  </tr>
+		</thead>
+	  
+		<tbody>
+		  {% for p in project %}
+		  <tr>
+			<td><h3>{{p.id}}</h3></td>
+			<td><h3>{{p.url_imagen}}</h3></td>
+			<td><h3>{{ p.titulo}}</h3></td>
+			<td><h3>{{ p.descripcion }}</h3></td>
+		  </tr>
+		  {% endfor %}
+		</tbody>
+	  </table>
+</div>
 
-
-
-{{ block.super }}
-{% endblock %}
+{{ block.super }} {% endblock %}

@@ -6,6 +6,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView
 
+def index(request):
+    return render(request, 'index.html')
+
 class feed(ListView):
 	model= Project
 	template_name= 'feed.html'
@@ -49,12 +52,10 @@ def profile(request, username=None):
 	if username and username == current_user.username:
 		contexto['user'] = User.objects.get(username=username)
 		contexto['project'] = Project.objects.all()
-
-		
 	else: 
 		user = current_user
-		
 	return render(request, 'profile.html', context=contexto)
+
 
 
 

@@ -5,10 +5,9 @@ from .models import Project
 
 
 class UserRegisterForm(UserCreationForm):
-	email = forms.EmailField()
-	password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
-	password2 = forms.CharField(
-	label='Confirma Contraseña', widget=forms.PasswordInput)
+	email = forms.EmailField(label=' Email', widget=forms.EmailInput())
+	password1 = forms.CharField(label='Password', widget=forms.PasswordInput())
+	password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput())
 
 	class Meta:
 		model = User

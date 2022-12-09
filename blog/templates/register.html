@@ -1,12 +1,16 @@
-{% extends 'layout.html' %}
+{% extends 'index.html' %}
+{% load static %}
+{% block register %}
+<div class="container col-8 bg-light  pt-5 pb-3 pl-2 pr-2">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+	<form class="form" method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<div class="d-grid border ">
+			<button  type="submit" id="submit"><b>Registrarse</b></button>
+		</div>
+	</form>
+</div>
 
-{% block content %}
 
-<form class="form" method="post">
-	{% csrf_token %}
-	{{ form.as_p }}
-
-	<button type="submit" id="submit">Registrarse</button>
-</form>
-
-{% endblock %}
+{% endblock register%}
