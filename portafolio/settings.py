@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'blog',
 ]
 
-CRF_TRUTED_ORIGINS=['portafolio-production-6f41.up.railway.app']
+CRF_TRUTED_ORIGINS=['https://portafolio-production-6f41.up.railway.app']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
