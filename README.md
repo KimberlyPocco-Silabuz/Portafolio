@@ -18,4 +18,12 @@ pip install django
 ```
 pip install mysqlclient
 ```
+Cambiar el nombre de la base de datos en  **DATABASES**  dentro de settings del proyecto para poder realizar las migraciones
+```
+python manage.py makemigrations blog
+```
+```
+python manage.py migrate blog
+```
+
 * [Template](https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/) - Este es el template Boostrap utilizado

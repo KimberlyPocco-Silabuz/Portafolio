@@ -29,7 +29,7 @@ def register(request):
 	return render(request, 'register.html', context)
 
 @login_required
-def proyecto(request):
+def create_project(request):
 	current_user = get_object_or_404(User, pk=request.user.pk)
 	if request.method == 'POST':
 		form = ProjectForm(request.POST)
@@ -58,7 +58,11 @@ def profile(request, username=None):
 
 
 
-
+@login_required
+def deleteProject(request, id):
+    project = Project.objects.get(id=id)
+    project.delete()
+    return redirect("feed")
 
 
 

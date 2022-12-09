@@ -1,35 +1,44 @@
-{% extends 'feed.html' %} {% load static %} {% block contentProfile %}
+{% extends 'feed.html' %}
+{% load static %} 
 
+{% block contentProfile %}
 <!-- Profile -->
 <div class="profile">
-	
   <h2>Tus proyectos,  @{{ user.username }}</h2>
 </div>
-
-<!-- items  del Proyecto-->
-<link href="{% static 'css/style.css'%}" rel="stylesheet" />
-<div class="container">
-	<table class="table">
-		<thead>
-		  <tr>
-			<th scope="col"><h2>ID</h2></th></div>
-			<th scope="col"><h2>URL</h2></th>
-			<th scope="col"><h2>TÍTULO</h2></th>
-			<th scope="col"><h2>DESCRIPCIÓN</h2></th>
-		  </tr>
-		</thead>
-	  
-		<tbody>
-		  {% for p in project %}
-		  <tr>
-			<td><h3>{{p.id}}</h3></td>
-			<td><h3>{{p.url_imagen}}</h3></td>
-			<td><h3>{{ p.titulo}}</h3></td>
-			<td><h3>{{ p.descripcion }}</h3></td>
-		  </tr>
-		  {% endfor %}
-		</tbody>
-	  </table>
-</div>
-
-{{ block.super }} {% endblock %}
+      
+ <div class="container-article">
+	 <table class="table">
+		<div class="d-grid">
+			<thead>
+				<tr>
+				  <th scope="col">ID</th></div>
+				  <th scope="col">URL</th>
+				  <th scope="col">TÍTULO</th>
+				  <th scope="col">DESCRIPCIÓN</th>
+				  <th scope="col">OPCIONES</th>
+				</tr>
+			  </thead>
+		</div>
+	   	 
+		 <tbody>
+		   {% for p in project %}
+		   <tr>
+			 <td>{{p.id}}</td>
+			 <td>{{p.url_imagen}}</td>
+			 <td>{{ p.titulo}}</td>
+			 <td>{{ p.descripcion }}</td>
+			 <td>
+				 <button type="submit" class="post" id="" > 
+				<a href="/delete/{{ p.id }}" onclick="return confirm('Estas seguro de eliminar el salón seleccionado?')"
+				 class="btn btn-danger btn-sm">Eliminar</a>
+				 </button>
+			 </td>
+		   </tr>
+		   {% endfor %}
+		 </tbody>
+		</table>
+ </div>
+  
+ {% endblock contentProfile%}
+  

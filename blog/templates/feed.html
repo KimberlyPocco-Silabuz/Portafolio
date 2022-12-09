@@ -1,7 +1,8 @@
 {% extends 'layout.html' %}
 {% load humanize %}
-{% block contentFeed %}
 
+
+{% block contentFeed %}
 {% for p in projects  %}
 
 <article>
@@ -16,7 +17,6 @@
         </div>
     </div>
 </article>
-
 {% endfor %}
 
-{% endblock %}
+{% endblock contentFeed %}
