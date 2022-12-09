@@ -78,14 +78,15 @@ WSGI_APPLICATION = 'portafolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'profile_blogs',
+        'NAME': 'railway',
         'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'PASSWORD': '68LjDNsA4DrnwBYn7nBT',
+        'HOST': 'containers-us-west-159.railway.app',
+        'PORT': '6524',
     }
 }
 
@@ -111,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-pe'
 
 TIME_ZONE = 'America/Lima'
 
