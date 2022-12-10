@@ -18,7 +18,7 @@ pip install django
 ```
 pip install mysqlclient
 ```
-Cambiar el nombre de la base de datos en  **DATABASES**  dentro de settings del proyecto para poder realizar las migraciones
+Crear una base de datos con el nombre de la base de datos en  **DATABASES**  dentro de settings del proyecto para poder realizar las migraciones
 ```
 python manage.py makemigrations blog
 ```
