@@ -1,4 +1,4 @@
-# PROYECTO UNIDAD 04 PORTAFOLIO
+# Portafolio blog en django
 _Kimberly Pocco Pariona_
 
 Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
